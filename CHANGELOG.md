@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2026-04-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`native_toolchain_rust` - `v1.0.4`](#native_toolchain_rust---v104)
+
+---
+
+#### `native_toolchain_rust` - `v1.0.4`
+
+ - **FIX**: do not include dep-info file itself as a tracked dependency ([#74](https://github.com/GregoryConrad/native_toolchain_rust/issues/74)).
+
+
 ## 2026-01-18
 
 ### Changes

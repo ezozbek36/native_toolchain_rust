@@ -1,3 +1,7 @@
+## 1.0.4
+
+ - **FIX**: do not include dep-info file itself as a tracked dependency ([#74](https://github.com/GregoryConrad/native_toolchain_rust/issues/74)).
+
 ## 1.0.3
 
  - **FIX**: use proper file extension for Android NDK ranlib on Windows ([#52](https://github.com/GregoryConrad/native_toolchain_rust/issues/52)).

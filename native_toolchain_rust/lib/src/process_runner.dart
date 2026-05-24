@@ -44,27 +44,3 @@ interface class ProcessRunner {
     }
   }
 }
-
-@internal
-extension InvokeRustup on ProcessRunner {
-  Future<String> invokeRustup(
-    List<String> arguments, {
-    String? workingDirectory,
-    Map<String, String>? environment,
-  }) async {
-    try {
-      return await invoke(
-        'rustup',
-        arguments,
-        workingDirectory: workingDirectory,
-        environment: environment,
-      );
-    } on ProcessException catch (e) {
-      throw RustProcessException(
-        'Failed to invoke rustup; is it installed? '
-        'For help installing rust, see https://rustup.rs',
-        inner: e,
-      );
-    }
-  }
-}

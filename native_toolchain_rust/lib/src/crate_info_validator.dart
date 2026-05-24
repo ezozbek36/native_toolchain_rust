@@ -44,7 +44,7 @@ For more information, see https://github.com/GregoryConrad/native_toolchain_rust
 
         final toolchainIssues = <String>[];
 
-        const deniedChannels = {'stable', 'beta', 'nightly'};
+        const deniedChannels = <String>{};
         if (deniedChannels.contains(channel)) {
           toolchainIssues.add(
             '''

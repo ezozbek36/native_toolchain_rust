@@ -78,15 +78,10 @@ interface class RustBuildRunner {
       toolchainTomlPath: path.join(crateDirectory.path, 'rust-toolchain.toml'),
     );
 
-    logger.info('Ensuring $toolchainChannel is installed');
-    await ensureToolchainDownloaded(crateDirectory.path);
-
     logger.info('Running cargo build');
-    await processRunner.invokeRustup(
+    await processRunner.invoke(
+      'cargo',
       [
-        'run',
-        toolchainChannel,
-        'cargo',
         'build',
         ...switch (buildMode) {
           BuildMode.release => ['--release'],
@@ -133,15 +128,5 @@ interface class RustBuildRunner {
         routing: routing,
       );
     }
-  }
-
-  Future<void> ensureToolchainDownloaded(String crateDirectory) async {
-    // NOTE: invoking rustup automatically downloads the toolchain
-    // in rust-toolchain.toml, if not already downloaded.
-    final showToolchainOutput = await processRunner.invokeRustup([
-      'show',
-      'active-toolchain',
-    ], workingDirectory: crateDirectory);
-    logger.config(showToolchainOutput);
   }
 }
